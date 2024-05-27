@@ -28,15 +28,15 @@ export const HeroSection = () => {
     <section className="w-full lg:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-end pb-10 sm:pb-32 py-32 lg:pb-[110px]">
       <div className="container flex items-start justify-between flex-col-reverse lg:flex-row">
         <div className="w-full lg:max-w-[530px]">
-          <p className="font-mono text-emerald-400">Olá, meu nome é</p>
+          <p className="font-mono text-emerald-400">Hello, my name is</p>
           <h2 className="text-4xl font-medium mt-2">Marcelo Almeida</h2>
 
           <p className="text-gray-400 my-6 text-sm sm:text-base">
-            Olá, meu nome é Marcelo Almeida e sou um desenvolvedor front-end
-            apaixonado por tecnologia. Com mais de 4 anos de experiência. Meu
-            objetivo é criar interfaces de usuário bonitas e funcionais, além de
-            liderar equipes técnicas em projetos desafiadores. Estou sempre
-            aberto a novas oportunidades e desafios.
+            Hello, my name is Marcelo Almeida and I am a front-end developer
+            passionate about technology. With over 4 years of experience, my
+            goal is to create beautiful and functional user interfaces, as well
+            as lead technical teams in challenging projects. I am always open to
+            new opportunities and challenges.
           </p>
 
           <div className="flex flex-wrap gap-x-2 gap-y-3 lag:max-w-[340px]">
