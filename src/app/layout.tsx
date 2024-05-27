@@ -3,6 +3,7 @@ import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "../components/header";
 import { ContactForm } from "../components/contact-form";
+import { BackToTop } from "../components/back-to-top";
 import { Footer } from "../components/footer";
 
 const inter = Inter({
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Header />
         {children}
         <ContactForm />
+        <BackToTop />
         <Footer />
       </body>
     </html>
