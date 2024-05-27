@@ -32,11 +32,10 @@ export const HeroSection = () => {
           <h2 className="text-4xl font-medium mt-2">Marcelo Almeida</h2>
 
           <p className="text-gray-400 my-6 text-sm sm:text-base">
-            Hello, my name is Marcelo Almeida and I am a front-end developer
-            passionate about technology. With over 4 years of experience, my
-            goal is to create beautiful and functional user interfaces, as well
-            as lead technical teams in challenging projects. I am always open to
-            new opportunities and challenges.
+            I am a front-end developer passionate about technology. With over 4
+            years of experience, my goal is to create beautiful and functional
+            user interfaces, as well as lead technical teams in challenging
+            projects. I am always open to new opportunities and challenges.
           </p>
 
           <div className="flex flex-wrap gap-x-2 gap-y-3 lag:max-w-[340px]">
