@@ -18,7 +18,7 @@ const MOCK_CONTACTS = [
     icon: <TbBrandLinkedin />,
   },
   {
-    url: "https://whatsapp.com",
+    url: "https://wa.me/5585997881135",
     icon: <TbBrandWhatsapp />,
   },
 ];
@@ -57,6 +57,7 @@ export const HeroSection = () => {
                   key={`contact-${index}`}
                   target="_blank"
                   className="hover:text-gray-100 transition-colors"
+                  rel="noreferrer"
                 >
                   {contact.icon}
                 </a>
@@ -67,10 +68,10 @@ export const HeroSection = () => {
 
         <Image
           width={420}
-          height={420}
+          height={404}
           src={"/images/profile-pic.png"}
           alt="Profile pic of Marcelo Almeida"
-          className="w-[300px] h-[300px] lg:w-[420px] lg:h-[420px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover"
+          className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover"
         />
       </div>
     </section>
