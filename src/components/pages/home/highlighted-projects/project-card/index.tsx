@@ -11,7 +11,7 @@ export const ProjectCard = () => {
           width={420}
           height={304}
           src="https://media.graphassets.com/FRhUdgUQTHmLmwf9u0BA"
-          alt="Project thumbnail"
+          alt="Project Bookwise Thumbnail"
           className="w-full h-[200px] sm:h-[300px] lg:w-[420px] lg:min-h-full object-cover rounded-lg"
         />
       </div>
