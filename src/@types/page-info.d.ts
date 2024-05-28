@@ -16,6 +16,7 @@ export type HomePageInfo = {
   };
   socials: Social[];
   knownTechs: KnownTech[];
+  highlightProjects: Project[];
 };
 
 export type HomePageData = {

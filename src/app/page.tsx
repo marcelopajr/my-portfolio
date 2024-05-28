@@ -7,29 +7,40 @@ import { WorkExperience } from "../components/pages/home/work-experience";
 
 const getPageData = async (): Promise<HomePageData> => {
   const query = `
-    query PageInfoQuery {
-      page(where: {slug: "home"}) {
-        introduction {
-          raw
+  query PageInfoQuery {
+    page(where: {slug: "home"}) {
+      introduction {
+        raw
+      }
+      technologies {
+        name
+      }
+      profilePicture {
+        url
+      }
+      socials {
+        url
+        iconSvg
+      }
+      knownTechs {
+        iconSvg
+        name
+        startDate
+      }
+      highlightProjects {
+        slug
+        thumbnail {
+          url
         }
+        title
+        shortDescription
         technologies {
           name
         }
-        profilePicture {
-          url
-        }
-        socials {
-          url
-          iconSvg
-        }
-        knownTechs {
-          iconSvg
-          name
-          startDate
-        }
       }
     }
-  `;
+  }
+`;
 
   return fetchHygraphQuery(
     query,
@@ -43,8 +54,8 @@ export default async function Home() {
   return (
     <>
       <HeroSection homeInfo={pageData} />
-      <KnownTechs />
-      <HighlightedProjects />
+      <KnownTechs techs={pageData.knownTechs} />
+      <HighlightedProjects projects={pageData.highlightProjects} />
       <WorkExperience />
     </>
   );
