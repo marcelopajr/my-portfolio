@@ -1,31 +1,19 @@
 "use client";
 
-import { Button } from "@/src/components/button";
-import { TechBadge } from "@/src/components/tech-badge";
 import Image from "next/image";
+import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import {
-  TbBrandGithub,
-  TbBrandLinkedin,
-  TbBrandWhatsapp,
-} from "react-icons/tb";
+import { HomePageInfo } from "@/src/@types/page-info";
+import { RichText } from "@/src/components/rich-text";
+import { TechBadge } from "@/src/components/tech-badge";
+import { CMSIcon } from "@/src/components/cms-icon";
+import { Button } from "@/src/components/button";
 
-const MOCK_CONTACTS = [
-  {
-    url: "https://github.com/marcelopajr",
-    icon: <TbBrandGithub />,
-  },
-  {
-    url: "https://linkedin.com/in/marcelopajr",
-    icon: <TbBrandLinkedin />,
-  },
-  {
-    url: "https://wa.me/5585997881135",
-    icon: <TbBrandWhatsapp />,
-  },
-];
+type HeroSectionProps = {
+  homeInfo: HomePageInfo;
+};
 
-export const HeroSection = () => {
+export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
   const handleContact = () => {
     const contactSection = document.querySelector("#contact");
 
@@ -41,16 +29,13 @@ export const HeroSection = () => {
           <p className="font-mono text-emerald-400">Hello, my name is</p>
           <h2 className="text-4xl font-medium mt-2">Marcelo Almeida</h2>
 
-          <p className="text-gray-400 my-6 text-sm sm:text-base">
-            I am a front-end developer passionate about technology. With over 4
-            years of experience, my goal is to create beautiful and functional
-            user interfaces, as well as lead technical teams in challenging
-            projects. I am always open to new opportunities and challenges.
-          </p>
+          <div className="text-gray-400 my-6 text-sm sm:text-base">
+            <RichText content={homeInfo.introduction.raw} />
+          </div>
 
           <div className="flex flex-wrap gap-x-2 gap-y-3 lag:max-w-[340px]">
-            {Array.from({ length: 5 }).map((_index) => (
-              <TechBadge name={"Next.js"} />
+            {homeInfo.technologies.map((tech) => (
+              <TechBadge name={tech.name} />
             ))}
           </div>
 
@@ -60,16 +45,16 @@ export const HeroSection = () => {
             </Button>
 
             <div className="text-2xl text-gray-600 flex items-center h-20 gap-3">
-              {MOCK_CONTACTS.map((contact, index) => (
-                <a
+              {homeInfo.socials.map((contact, index) => (
+                <Link
                   href={contact.url}
                   key={`contact-${index}`}
                   target="_blank"
                   className="hover:text-gray-100 transition-colors"
                   rel="noreferrer"
                 >
-                  {contact.icon}
-                </a>
+                  <CMSIcon icon={contact.iconSvg} />
+                </Link>
               ))}
             </div>
           </div>
