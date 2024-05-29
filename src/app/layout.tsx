@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "../components/header";
+import { Toaster } from "../components/toaster";
 import { ContactForm } from "../components/contact-form";
 import { BackToTop } from "../components/back-to-top";
 import { Footer } from "../components/footer";
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="pt-BR" className={`${inter.variable} ${plexMono.variable}`}>
       <body>
         <Header />
+        <Toaster />
         {children}
         <ContactForm />
         <BackToTop />
