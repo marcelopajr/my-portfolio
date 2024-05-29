@@ -1,16 +1,56 @@
 import Image from "next/image";
+import { differenceInMonths, differenceInYears, format } from "date-fns";
+import enUS from "date-fns/locale/en-US";
+import { WorkExperience } from "@/src/@types/work-experience";
+import { RichText } from "@/src/components/rich-text";
 import { TechBadge } from "@/src/components/tech-badge";
 
-export const ExperienceItem = () => {
+type ExperienceItemProps = {
+  experience: WorkExperience;
+};
+
+export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
+  const {
+    startDate,
+    endDate,
+    companyName,
+    companyLogo,
+    companyUrl,
+    description,
+    role,
+    technologies,
+  } = experience;
+
+  const formattedStartDate =
+    startDate &&
+    format(new Date(experience.startDate), "MMM yyyy", { locale: enUS });
+  const formattedEndDate = endDate
+    ? format(new Date(endDate), "MMM yyyy", { locale: enUS })
+    : "Present";
+
+  const end = endDate ? new Date(endDate) : new Date();
+  const months = differenceInMonths(end, new Date(startDate));
+  const years = differenceInYears(end, new Date(startDate));
+  const monthsRemaining = months % 12;
+
+  const formattedDuration =
+    years > 0
+      ? `${years} year${years > 1 ? "s" : ""}${
+          monthsRemaining > 0
+            ? ` and ${monthsRemaining} month${monthsRemaining > 1 ? "s" : ""}`
+            : ""
+        }`
+      : `${months} month${months > 1 ? "s" : ""}`;
+
   return (
     <div className="grid grid-cols-[40px,1fr] gap-4 md:gap-10">
       <div className="flex flex-col items-center gap-4">
         <div className="rounded-full border border-gray-500 p-0.5">
           <Image
-            src={"https://media.graphassets.com/Q4lS2mPkT4Kw3BHM6Ba5"}
+            src={companyLogo.url}
             width={40}
             height={40}
-            alt="Company logo"
+            alt={`${companyName} logo`}
             className="rounded-full"
           />
         </div>
@@ -21,30 +61,31 @@ export const ExperienceItem = () => {
       <div>
         <div className="flex flex-col gap-2 text-sm sm:text-base">
           <a
-            href="https://www.linkedin.com/company/the-brooklyn-brothers/"
+            href={companyUrl}
             target="_blank"
             className="text-gray-500 hover:text-emerald-500 transition-colors"
           >
-            @ The Brooklyn Brothers
+            @ {companyName}
           </a>
-          <h4 className="text-gray-300">React Front-end Developer</h4>
-          <span className="text-gray-500">Oct 2023 • Present • (8 mos)</span>
-          <p className="text-gray-400">
-            • Developed and maintained international websites for Unilever and
-            Rexona, improving performance, SEO, and search engine rankings. •
-            Refactored components and pages, adhering to best practices and
-            accessibility standards. • Collaborated with global clients,
-            providing technical support and clear communication. • Utilized
-            React, Sanity, Gatsby, TypeScript, and SASS to deliver high-quality
-            web experiences.
-          </p>
+          <h4 className="text-gray-300">{role}</h4>
+          <span className="text-gray-500">
+            {formattedStartDate} • {formattedEndDate} • ({formattedDuration})
+          </span>
+          <div className="text-gray-400">
+            <RichText content={description.raw} />
+          </div>
         </div>
 
-        <p className="text-gray-400 text-sm mb-3 mt-6 font-semibold">Skills</p>
+        <p className="text-gray-400 text-sm mb-3 mt-6 font-semibold">
+          Tech Stack
+        </p>
         <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[350px] mb-8">
-          <TechBadge name={"React"} />
-          <TechBadge name={"React"} />
-          <TechBadge name={"React"} />
+          {technologies.map((tech) => (
+            <TechBadge
+              key={`experience-${companyName}-tech-${tech.name}`}
+              name={tech.name}
+            />
+          ))}
         </div>
       </div>
     </div>
