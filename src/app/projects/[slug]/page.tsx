@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { fetchHygraphQuery } from "@/src/utils/fetch-hygraph-query";
 import {
   ProjectPageData,
@@ -73,4 +74,24 @@ export async function generateStaticParams() {
   const { projects } = await fetchHygraphQuery<ProjectsPageStaticData>(query);
 
   return projects;
+}
+
+export async function generateMetadata({
+  params: { slug },
+}: ProjectProps): Promise<Metadata> {
+  const { project } = await getProjectDetails(slug);
+
+  return {
+    title: project.title,
+    description: project.shortDescription.text,
+    openGraph: {
+      images: [
+        {
+          url: project.pageThumbnail.url,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+  };
 }

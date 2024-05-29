@@ -3,6 +3,10 @@ import { ProjectsPageData } from "@/src/@types/page-info";
 import { PageIntroduction } from "@/src/components/pages/projects/page-introduction";
 import { ProjectsList } from "@/src/components/pages/projects/projects-list";
 
+export const metadata = {
+  title: "Projects",
+};
+
 const getPageData = async (): Promise<ProjectsPageData> => {
   const query = `
     query ProjectsQuery {

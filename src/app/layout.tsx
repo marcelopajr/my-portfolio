@@ -19,6 +19,14 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
+export const metadata = {
+  title: {
+    default: "Home | Marcelo Almeida",
+    template: "%s | Marcelo Almeida",
+  },
+  icons: [{ url: "/favicon.svg" }],
+};
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR" className={`${inter.variable} ${plexMono.variable}`}>
