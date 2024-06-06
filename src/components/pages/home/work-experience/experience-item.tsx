@@ -4,7 +4,7 @@ import Image from "next/image";
 import { differenceInMonths, differenceInYears, format } from "date-fns";
 import enUS from "date-fns/locale/en-US";
 import { motion } from "framer-motion";
-import { fadeDownAnimation, techBadgeAnimation } from "@/src/lib/animations";
+import { fadeUpAnimation, techBadgeAnimation } from "@/src/lib/animations";
 import { WorkExperience } from "@/src/@types/work-experience";
 import { RichText } from "@/src/components/rich-text";
 import { TechBadge } from "@/src/components/tech-badge";
@@ -49,7 +49,7 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
   return (
     <motion.div
       className="grid grid-cols-[40px,1fr] gap-4 md:gap-10"
-      {...fadeDownAnimation}
+      {...fadeUpAnimation}
       transition={{ duration: 0.5 }}
     >
       <div className="flex flex-col items-center gap-4">

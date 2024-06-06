@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { motion } from "framer-motion";
-import { fadeDownAnimation, techBadgeAnimation } from "@/src/lib/animations";
+import { fadeUpAnimation, techBadgeAnimation } from "@/src/lib/animations";
 import { Project } from "@/src/@types/projects";
 import { TechBadge } from "@/src/components/tech-badge";
 import { CustomLink } from "@/src/components/custom-link";
@@ -16,9 +16,9 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <motion.div
       className="flex gap-6 lg:gap-12 flex-col lg:flex-row"
-      initial={{ opacity: 0, y: -100 }}
+      initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -100 }}
+      exit={{ opacity: 0, y: 100 }}
       transition={{ duration: 0.5 }}
     >
       <motion.div
@@ -40,8 +40,8 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       <div className="flex-1 lg:py-[18px]">
         <motion.h3
           className="flex items-center gap-3 font-medium text-lg text-gray-50"
-          {...fadeDownAnimation}
-          transition={{ duration: 0.7 }}
+          {...fadeUpAnimation}
+          transition={{ duration: 0.5 }}
         >
           <Image
             width={20}
@@ -54,7 +54,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 
         <motion.p
           className="text-gray-400 my-6"
-          {...fadeDownAnimation}
+          {...fadeUpAnimation}
           transition={{ duration: 0.2, delay: 0.3 }}
         >
           {project.shortDescription}
