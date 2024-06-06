@@ -5,7 +5,7 @@ import { TbBrandGithub } from "react-icons/tb";
 import { FiGlobe } from "react-icons/fi";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import { motion } from "framer-motion";
-import { fadeUpAnimation, techBadgeAnimation } from "@/src/lib/animations";
+import { fadeDownAnimation, techBadgeAnimation } from "@/src/lib/animations";
 import { Project } from "@/src/@types/projects";
 import { SectionTitle } from "@/src/components/section-title";
 import { RichText } from "@/src/components/rich-text";
@@ -37,7 +37,7 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
 
       <motion.div
         className="text-gray-400 text-center max-w-[640px] my-4 sm:my-6 text-sm sm:text-base"
-        {...fadeUpAnimation}
+        {...fadeDownAnimation}
       >
         <RichText content={project.description.raw} />
       </motion.div>
@@ -55,7 +55,7 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
 
       <motion.div
         className="my-6 sm:my-12 flex items-center gap-2 sm:gap-4 flex-col sm:flex-row"
-        {...fadeUpAnimation}
+        {...fadeDownAnimation}
       >
         {project?.githubUrl && (
           <Link href={project.githubUrl} target="_blank">

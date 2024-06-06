@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import toast from "react-hot-toast";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { motion } from "framer-motion";
-import { fadeUpAnimation } from "@/src/lib/animations";
+import { fadeDownAnimation } from "@/src/lib/animations";
 import { SectionTitle } from "../section-title";
 import { Button } from "../button";
 
@@ -54,7 +54,7 @@ export const ContactForm = () => {
         <motion.form
           className="mt-12 w-full flex flex-col gap-4"
           onSubmit={handleSubmit(onSubmit)}
-          {...fadeUpAnimation}
+          {...fadeDownAnimation}
         >
           <input
             placeholder="Name"

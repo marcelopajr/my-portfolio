@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { fadeUpAnimation } from "@/src/lib/animations";
+import { fadeDownAnimation } from "@/src/lib/animations";
 import { Project } from "@/src/@types/projects";
 import { ProjectCard } from "./project-card";
 
@@ -16,7 +16,7 @@ export const ProjectsList = ({ projects }: ProjectsListProps) => {
       {projects.map((project, index) => (
         <motion.div
           key={project.title}
-          {...fadeUpAnimation}
+          {...fadeDownAnimation}
           transition={{ duration: 0.5, delay: index * 0.1 }}
         >
           <Link href={`/projects/${project.slug}`}>

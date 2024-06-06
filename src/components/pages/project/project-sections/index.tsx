@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { fadeUpAnimation } from "@/src/lib/animations";
+import { fadeDownAnimation } from "@/src/lib/animations";
 import { ProjectSection } from "@/src/@types/projects";
 
 type ProjectSectionsProps = {
@@ -16,7 +16,7 @@ export const ProjectSections = ({ sections }: ProjectSectionsProps) => {
         <motion.div
           key={title}
           className="flex flex-col items-center gap-6 md:gap-12"
-          {...fadeUpAnimation}
+          {...fadeDownAnimation}
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-2xl md:text-3xl font-medium text-gray-300">
