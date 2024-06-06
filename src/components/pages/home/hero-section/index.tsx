@@ -83,7 +83,7 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
           <Image
             width={420}
             height={404}
-            src={"/images/profile-pic.png"}
+            src={homeInfo.profilePicture.url}
             alt="Profile pic of Marcelo Almeida"
             className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover"
           />
