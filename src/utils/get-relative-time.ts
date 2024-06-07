@@ -46,5 +46,5 @@ export function getRelativeTimeString(
 
   // Intl.RelativeTimeFormat do its magic
   const rtf = new Intl.RelativeTimeFormat(lang, { numeric: "auto" });
-  return rtf.format(Math.floor(deltaSeconds / divisor), units[unitIndex]);
+  return rtf.format(Math.floor(deltaSeconds / divisor + 1), units[unitIndex]);
 }

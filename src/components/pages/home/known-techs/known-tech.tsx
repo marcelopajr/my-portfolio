@@ -7,10 +7,9 @@ type KnownTechProps = {
 };
 
 export const KnownTech = ({ tech }: KnownTechProps) => {
-  const relativeTime = getRelativeTimeString(
-    new Date(tech.startDate),
-    "en-US"
-  ).replace(" ago", "");
+  const relativeTime = getRelativeTimeString(new Date(tech.startDate), "en-US")
+    ?.replace("last", "1")
+    ?.replace(" ago", "");
 
   return (
     <div className="p-6 rounded-lg bg-gray-600/20 text-gray-500 flex flex-col gap-2 hover:text-emerald-500 hover:bg-gray-600/30 transition-all">
