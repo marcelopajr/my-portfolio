@@ -87,7 +87,7 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
         <p className="text-gray-400 text-sm mb-3 mt-6 font-semibold">
           Tech Stack
         </p>
-        <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[350px] mb-8">
+        <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[500px] mb-8">
           {technologies.map((tech, index) => (
             <TechBadge
               key={`experience-${companyName}-tech-${tech.name}`}
