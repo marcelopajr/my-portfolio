@@ -65,6 +65,7 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
                   target="_blank"
                   className="hover:text-gray-100 transition-colors"
                   rel="noreferrer"
+                  aria-label={`Link to ${contact.name}`}
                 >
                   <CMSIcon icon={contact.iconSvg} />
                 </Link>
@@ -86,6 +87,7 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
             src={homeInfo.profilePicture.url}
             alt="Profile pic of Marcelo Almeida"
             className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover"
+            priority
           />
         </motion.div>
       </div>

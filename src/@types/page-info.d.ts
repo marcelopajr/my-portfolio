@@ -3,6 +3,7 @@ import { KnownTech } from "./projects";
 import { WorkExperience } from "./work-experience";
 
 export type Social = {
+  name: string;
   url: string;
   iconSvg: string;
 };

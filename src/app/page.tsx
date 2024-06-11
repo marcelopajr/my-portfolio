@@ -19,6 +19,7 @@ const getPageData = async (): Promise<HomePageData> => {
         url
       }
       socials {
+        name
         url
         iconSvg
       }

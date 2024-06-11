@@ -5,7 +5,7 @@ import { TbBrandGithub } from "react-icons/tb";
 import { FiGlobe } from "react-icons/fi";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import { motion } from "framer-motion";
-import { fadeUpAnimation, techBadgeAnimation } from "@/src/lib/animations";
+import { techBadgeAnimation } from "@/src/lib/animations";
 import { Project } from "@/src/@types/projects";
 import { SectionTitle } from "@/src/components/section-title";
 import { RichText } from "@/src/components/rich-text";
@@ -22,7 +22,7 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
       <motion.div
         className="absolute inset-0 z-[-1]"
         style={{
-          background: `url(/images/hero-bg.png) no-repeat center/cover, url(${project.pageThumbnail.url}) no-repeat center/cover`,
+          background: `url(/images/hero-bg.webp) no-repeat center/cover, url(${project.pageThumbnail.url}) no-repeat center/cover`,
         }}
         initial={{ opacity: 0, scale: 1.3 }}
         animate={{ opacity: 1, scale: 1 }}
