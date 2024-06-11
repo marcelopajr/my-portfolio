@@ -1,12 +1,46 @@
-# Template - Tutorial Portfólio 2023
+<h1 align="center">
+    <img alt="Marcelo Almeida Logo" title="Marcelo Almeida Logo" src=".github/logo.svg" width="220px" />
+</h1>
 
-![image](https://github.com/gbdev-labs/template-portfolio-tutorial-2023/assets/71772559/ade0ec7a-cb22-4c5c-a4fa-183ab380357e)
+<p align="center">
+  <a href="#-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projects">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-lighthouse">Lighthouse</a>
+</p>
 
+<p align="center">
+  <img alt="Porfolio Screenshot" src=".github/my-portfolio.png" width="100%">
+</p>
 
-Este é um template básico que será usado na [série do YouTube](https://youtube.com/playlist?list=PLY_G6KZ7jlfU41bdaWpTsOnfCC7bmpJcL) para criar um Portfólio com as ferramentas mais recentes de desenvolvimento web. O template inclui o Next.js 13, Tailwind CSS, Hygraph CMS, TypeScript e Framer Motion, que são as tecnologias principais que serão usadas na série.
+## 💻 About
 
-O objetivo deste template é fornecer um ponto de partida para os espectadores que acompanham a série de tutoriais e desejam seguir juntamente com a construção do portfólio. Ele inclui a estrutura básica do projeto e os arquivos necessários para iniciar o desenvolvimento do portfólio.
+Welcome to my portfolio! I am a passionate Front-End Engineer dedicated to creating seamless and visually appealing web experiences. Here you can explore my selected projects, which showcase my skills in front-end development and my dedication to delivering high-quality web applications.
 
-Ao usar este template, você poderá seguir os tutoriais da série passo a passo e criar um portfólio profissional e impressionante com as mais recentes tecnologias de desenvolvimento web.
+## 🚀 Project
 
-[**Projeto final**](https://github.com/GBDev13/portfolio-tutorial-2023)
+Explore the application and discover my key projects by visiting my website: [marceloalmeida.vercel.app](https://marceloalmeida.vercel.app)
+
+## 🔧 Technologies
+
+Throughout these projects, I have utilized a variety of technologies and tools, including:
+
+- [React.js](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Hook Form](https://www.react-hook-form.com/)
+- [Zod](https://zod.dev/)
+- [Hygraph Headless CMS](https://hygraph.com/)
+- [GraphQL](https://graphql.org/)
+- [Framer Motion](https://www.framer.com/motion/)
+
+## ✨ Lighthouse
+
+A standout feature of my work is the exceptional performance and accessibility of the website, as evaluated by Lighthouse, Google's tool for web quality assessment. Here are the Lighthouse metrics for the site:
+
+<p align="center">
+  <img alt="Google Lighthouse Screenshot" src=".github/lighthouse.png" width="100%">
+</p>
+
+High Lighthouse scores underscore my dedication to delivering top-tier, user-friendly, and efficient web experiences. Explore the site to see these optimizations in action!
