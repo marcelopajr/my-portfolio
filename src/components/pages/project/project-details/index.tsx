@@ -50,7 +50,7 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
             key={tech.name}
             name={tech.name}
             {...techBadgeAnimation}
-            transition={{ duration: 0.3, delay: index * 0.1 }}
+            transition={{ duration: 0.3, delay: index * 0.07 }}
           />
         ))}
       </div>

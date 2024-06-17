@@ -93,7 +93,7 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
               key={`experience-${companyName}-tech-${tech.name}`}
               name={tech.name}
               {...techBadgeAnimation}
-              transition={{ duration: 0.2, delay: index * 0.1 }}
+              transition={{ duration: 0.2, delay: index * 0.07 }}
             />
           ))}
         </div>
