@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import NextLink from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { fadeUpAnimation, techBadgeAnimation } from "@/src/lib/animations";
@@ -28,13 +29,15 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         exit={{ opacity: 0, y: 100, scale: 0.5 }}
         transition={{ duration: 0.3, delay: 0.3 }}
       >
-        <Image
-          width={420}
-          height={304}
-          src={project.thumbnail.url}
-          alt={`Project ${project.title} Thumbnail`}
-          className="w-full h-full object-cover rounded-lg"
-        />
+        <NextLink href={`/projects/${project.slug}`}>
+          <Image
+            width={420}
+            height={304}
+            src={project.thumbnail.url}
+            alt={`Project ${project.title} Thumbnail`}
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </NextLink>
       </motion.div>
 
       <div className="flex-1 lg:py-[18px]">
@@ -49,7 +52,9 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             src={"/images/icons/project-title-icon.svg"}
             alt=""
           />
-          {project.title}
+          <NextLink href={`/projects/${project.slug}`}>
+            {project.title}
+          </NextLink>
         </motion.h3>
 
         <motion.p
@@ -66,7 +71,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               key={`${project.title}-tech-${tech.name}`}
               name={tech.name}
               {...techBadgeAnimation}
-              transition={{ duration: 0.2, delay: 0.5 + index * 0.1 }}
+              transition={{ duration: 0.2, delay: 0.5 + index * 0.07 }}
             />
           ))}
         </div>
