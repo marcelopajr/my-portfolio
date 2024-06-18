@@ -18,7 +18,7 @@ export const WorkExperience = ({ experiences }: WorkExperienceProps) => {
       </div>
 
       <div className="flex flex-col gap-4">
-        {experiences?.map((experience) => (
+        {experiences?.reverse()?.map((experience) => (
           <ExperienceItem
             key={experience.companyName}
             experience={experience}
