@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
+import { AiOutlineFileText } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { techBadgeAnimation } from "@/src/lib/animations";
 import { HomePageInfo } from "@/src/@types/page-info";
@@ -53,11 +54,28 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
           </div>
 
           <div className="mt-6 lg:mt-10 flex sm:items-center sm:gap-5 flex-col sm:flex-row">
-            <Button className="w-max shadow-button" onClick={handleContact}>
+            <Link
+              href={
+                "https://docs.google.com/document/d/1vdwlo17KRDFKvgS_878ADEEZy_hMfsN8/edit?usp=sharing&ouid=108058612914376861985&rtpof=true&sd=true"
+              }
+              target="_blank"
+              className="w-full sm:w-max"
+              rel="noreferrer"
+              aria-label={`Link to Marcelo Almeida Resume`}
+            >
+              <Button className="w-full sm:w-max shadow-button bg-gray-50 text-emerald-700 hover:text-gray-50 mb-3 sm:mb-0">
+                Resume <AiOutlineFileText size={18} />
+              </Button>
+            </Link>
+
+            <Button
+              className="w-full sm:w-max shadow-button"
+              onClick={handleContact}
+            >
               Get in touch <HiArrowNarrowRight size={18} />
             </Button>
 
-            <div className="text-2xl text-gray-600 flex items-center h-20 gap-3">
+            <div className="text-2xl text-gray-600 flex items-center h-20 gap-3 justify-center sm:justify-start">
               {homeInfo.socials.map((contact, index) => (
                 <Link
                   href={contact.url}
