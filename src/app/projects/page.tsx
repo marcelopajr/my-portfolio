@@ -10,7 +10,7 @@ export const metadata = {
 const getPageData = async (): Promise<ProjectsPageData> => {
   const query = `
     query ProjectsQuery {
-      projects {
+      projects(first: 9) {
         shortDescription
         slug
         title

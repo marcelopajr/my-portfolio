@@ -44,7 +44,7 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         <RichText content={project.description.raw} />
       </motion.div>
 
-      <div className="w-full max-w-[330px] flex flex-wrap gap-2 items-center justify-center">
+      <div className="w-full max-w-[640px] flex flex-wrap gap-2 items-center justify-center">
         {project.technologies.map((tech, index) => (
           <TechBadge
             key={tech.name}
