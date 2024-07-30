@@ -1,13 +1,15 @@
-import { cn } from "@/src/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ReactNode } from "react";
+import { cn } from "@/src/lib/utils";
 
 type NavItemProps = {
   label: string;
   href: string;
+  icon: ReactNode;
 };
 
-export const NavItem = ({ label, href }: NavItemProps) => {
+export const NavItem = ({ label, href, icon }: NavItemProps) => {
   const pathname = usePathname();
 
   const isActive = pathname === href;
@@ -20,7 +22,7 @@ export const NavItem = ({ label, href }: NavItemProps) => {
         isActive && "text-gray-50"
       )}
     >
-      <span className="text-emerald-400">#</span>
+      <span className={cn('text-gray-400', isActive && 'text-emerald-400')}>{icon}</span>
       {label}
     </Link>
   );

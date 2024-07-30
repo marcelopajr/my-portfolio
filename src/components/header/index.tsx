@@ -3,16 +3,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { AiOutlineHome, AiOutlineFundProjectionScreen } from 'react-icons/ai'
 import { NavItem } from "./nav-item";
 
 const NAV_ITEMS = [
   {
     label: "Home",
     href: "/",
+    icon: <AiOutlineHome size={20} />
   },
   {
     label: "Projects",
     href: "/projects",
+    icon: <AiOutlineFundProjectionScreen size={20} />
   },
 ];
 
