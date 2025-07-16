@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://marceloalmeida.vercel.app/sitemap.xml/
+Sitemap: https://marcelopereira.vercel.app/sitemap.xml/

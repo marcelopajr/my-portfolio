@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Marcelo Almeida Logo" title="Marcelo Almeida Logo" src=".github/logo.svg" width="220px" />
+    <img alt="Marcelo Pereira Logo" title="Marcelo Pereira Logo" src=".github/logo.svg" width="220px" />
 </h1>
 
 <p align="center">
@@ -51,7 +51,7 @@ The website successfully:
 
 Visit my portfolio and discover my key projects by visiting my website:
 
-<h3 align="center"><a href="https://marceloalmeida.vercel.app" target="_blank">https://marceloalmeida.vercel.app</a> 🚀🌐</h3>
+<h3 align="center"><a href="https://marcelopereira.vercel.app" target="_blank">https://marcelopereira.vercel.app</a> 🚀🌐</h3>
 
 ## 🔧 Technologies
 

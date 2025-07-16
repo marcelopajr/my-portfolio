@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { HiArrowNarrowRight } from "react-icons/hi";
-import { AiOutlineFileText } from "react-icons/ai";
-import { motion } from "framer-motion";
-import { techBadgeAnimation } from "@/src/lib/animations";
-import { HomePageInfo } from "@/src/@types/page-info";
-import { RichText } from "@/src/components/rich-text";
-import { TechBadge } from "@/src/components/tech-badge";
-import { CMSIcon } from "@/src/components/cms-icon";
-import { Button } from "@/src/components/button";
+import Image from 'next/image';
+import Link from 'next/link';
+import { HiArrowNarrowRight } from 'react-icons/hi';
+import { AiOutlineFileText } from 'react-icons/ai';
+import { motion } from 'framer-motion';
+import { techBadgeAnimation } from '@/src/lib/animations';
+import { HomePageInfo } from '@/src/@types/page-info';
+import { RichText } from '@/src/components/rich-text';
+import { TechBadge } from '@/src/components/tech-badge';
+import { CMSIcon } from '@/src/components/cms-icon';
+import { Button } from '@/src/components/button';
 
 type HeroSectionProps = {
   homeInfo: HomePageInfo;
@@ -18,10 +18,10 @@ type HeroSectionProps = {
 
 export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
   const handleContact = () => {
-    const contactSection = document.querySelector("#contact");
+    const contactSection = document.querySelector('#contact');
 
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
+      contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -36,7 +36,7 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
           transition={{ duration: 0.5 }}
         >
           <p className="font-mono text-emerald-400">Hello, my name is</p>
-          <h2 className="text-4xl font-medium mt-2">Marcelo Almeida</h2>
+          <h2 className="text-4xl font-medium mt-2">Marcelo Pereira</h2>
 
           <div className="text-gray-400 my-6 text-sm sm:text-base">
             <RichText content={homeInfo.introduction.raw} />
@@ -56,12 +56,12 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
           <div className="mt-6 lg:mt-10 flex sm:items-center sm:gap-5 flex-col sm:flex-row">
             <Link
               href={
-                "https://docs.google.com/document/d/1vdwlo17KRDFKvgS_878ADEEZy_hMfsN8/edit?usp=sharing&ouid=108058612914376861985&rtpof=true&sd=true"
+                'https://docs.google.com/document/d/1vdwlo17KRDFKvgS_878ADEEZy_hMfsN8/edit?usp=sharing&ouid=108058612914376861985&rtpof=true&sd=true'
               }
               target="_blank"
               className="w-full sm:w-max"
               rel="noreferrer"
-              aria-label={`Link to Marcelo Almeida Resume`}
+              aria-label={`Link to Marcelo Pereira Resume`}
             >
               <Button className="w-full sm:w-max shadow-button bg-gray-50 text-emerald-700 hover:text-gray-50 mb-3 sm:mb-0">
                 Resume <AiOutlineFileText size={18} />
@@ -103,7 +103,7 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
             width={420}
             height={404}
             src={homeInfo.profilePicture.url}
-            alt="Profile pic of Marcelo Almeida"
+            alt="Profile pic of Marcelo Pereira"
             className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover"
             priority
           />

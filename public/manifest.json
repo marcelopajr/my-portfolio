@@ -3,9 +3,9 @@
   "background_color": "#121B29",
   "display": "standalone",
   "scope": "/",
-  "start_url": "https://marceloalmeida.vercel.app/",
-  "name": "Marcelo Almeida",
-  "short_name": "Marcelo Almeida",
+  "start_url": "https://marcelopereira.vercel.app/",
+  "name": "Marcelo Pereira",
+  "short_name": "Marcelo Pereira",
   "description": "Welcome to my portfolio! Here you can explore my selected projects, which showcase my skills in front-end development and my dedication to delivering high-quality web applications.",
   "icons": [
     {

@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { IoMdHeart } from "react-icons/io";
+import Link from 'next/link';
+import { IoMdHeart } from 'react-icons/io';
 
 export const Footer = () => {
   return (
@@ -10,7 +10,7 @@ export const Footer = () => {
           href="https://www.linkedin.com/in/marcelopajr/?locale=en_US"
           target="_blank"
         >
-          <strong className="font-medium">Marcelo Almeida</strong>
+          <strong className="font-medium">Marcelo Pereira</strong>
         </Link>
       </span>
     </footer>
