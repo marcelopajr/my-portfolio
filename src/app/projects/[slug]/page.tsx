@@ -57,7 +57,10 @@ export default async function Project({ params: { slug } }: ProjectProps) {
   return (
     <>
       <ProjectDetails project={project} />
-      <ProjectSections sections={project.sections} />
+      <ProjectSections
+        sections={project.sections}
+        description={project.description.text}
+      />
     </>
   );
 }

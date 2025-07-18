@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 import { techBadgeAnimation } from "@/src/lib/animations";
 import { Project } from "@/src/@types/projects";
 import { SectionTitle } from "@/src/components/section-title";
-import { RichText } from "@/src/components/rich-text";
 import { TechBadge } from "@/src/components/tech-badge";
 import { Button } from "@/src/components/button";
 import { CustomLink } from "@/src/components/custom-link";
@@ -41,7 +40,9 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -50 }}
       >
-        <RichText content={project.description.raw} />
+        <p className="mt-2 text-gray-400 line-clamp-4">
+          {project.shortDescription}
+        </p>
       </motion.div>
 
       <div className="w-full max-w-[640px] flex flex-wrap gap-2 items-center justify-center">
