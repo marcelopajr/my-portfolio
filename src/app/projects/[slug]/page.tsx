@@ -1,17 +1,14 @@
-import { Metadata } from "next";
-import { fetchHygraphQuery } from "@/src/utils/fetch-hygraph-query";
-import {
-  ProjectPageData,
-  ProjectsPageStaticData,
-} from "@/src/@types/page-info";
-import { ProjectDetails } from "@/src/components/pages/project/project-details";
-import { ProjectSections } from "@/src/components/pages/project/project-sections";
+import { Metadata } from 'next'
+import { fetchHygraphQuery } from '@/src/utils/fetch-hygraph-query'
+import { ProjectPageData, ProjectsPageStaticData } from '@/src/@types/page-info'
+import { ProjectDetails } from '@/src/components/pages/project/project-details'
+import { ProjectSections } from '@/src/components/pages/project/project-sections'
 
 type ProjectProps = {
   params: {
-    slug: string;
-  };
-};
+    slug: string
+  }
+}
 
 const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
   const query = `
@@ -42,17 +39,17 @@ const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
       githubUrl
     }
   }
-  `;
+  `
   const data = fetchHygraphQuery<ProjectPageData>(
     query,
-    1000 * 60 * 60 * 24 // 1 day
-  );
+    1000 * 60 * 60 * 24, // 1 day
+  )
 
-  return data;
-};
+  return data
+}
 
 export default async function Project({ params: { slug } }: ProjectProps) {
-  const { project } = await getProjectDetails(slug);
+  const { project } = await getProjectDetails(slug)
 
   return (
     <>
@@ -62,7 +59,7 @@ export default async function Project({ params: { slug } }: ProjectProps) {
         description={project.description.text}
       />
     </>
-  );
+  )
 }
 
 export async function generateStaticParams() {
@@ -72,17 +69,17 @@ export async function generateStaticParams() {
       slug
     }
   }
-  `;
+  `
 
-  const { projects } = await fetchHygraphQuery<ProjectsPageStaticData>(query);
+  const { projects } = await fetchHygraphQuery<ProjectsPageStaticData>(query)
 
-  return projects;
+  return projects
 }
 
 export async function generateMetadata({
   params: { slug },
 }: ProjectProps): Promise<Metadata> {
-  const { project } = await getProjectDetails(slug);
+  const { project } = await getProjectDetails(slug)
 
   return {
     title: project.title,
@@ -96,5 +93,5 @@ export async function generateMetadata({
         },
       ],
     },
-  };
+  }
 }

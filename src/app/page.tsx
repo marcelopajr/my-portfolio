@@ -1,9 +1,9 @@
-import { fetchHygraphQuery } from "../utils/fetch-hygraph-query";
-import { HomePageData } from "../@types/page-info";
-import { HeroSection } from "../components/pages/home/hero-section";
-import { KnownTechs } from "../components/pages/home/known-techs";
-import { HighlightedProjects } from "../components/pages/home/highlighted-projects";
-import { WorkExperience } from "../components/pages/home/work-experience";
+import { fetchHygraphQuery } from '../utils/fetch-hygraph-query'
+import { HomePageData } from '../@types/page-info'
+import { HeroSection } from '../components/pages/home/hero-section'
+import { KnownTechs } from '../components/pages/home/known-techs'
+import { HighlightedProjects } from '../components/pages/home/highlighted-projects'
+import { WorkExperience } from '../components/pages/home/work-experience'
 
 const getPageData = async (): Promise<HomePageData> => {
   const query = `
@@ -57,16 +57,16 @@ const getPageData = async (): Promise<HomePageData> => {
       }
     }
   }
-`;
+`
 
   return fetchHygraphQuery(
     query,
-    1000 * 60 * 60 * 24 // 1 day
-  );
-};
+    1000 * 60 * 60 * 24, // 1 day
+  )
+}
 
 export default async function Home() {
-  const { page: pageData, workExperiences } = await getPageData();
+  const { page: pageData, workExperiences } = await getPageData()
 
   return (
     <>
@@ -75,5 +75,5 @@ export default async function Home() {
       <HighlightedProjects projects={pageData.highlightProjects} />
       <WorkExperience experiences={workExperiences} />
     </>
-  );
+  )
 }

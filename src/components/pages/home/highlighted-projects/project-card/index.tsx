@@ -1,17 +1,17 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import NextLink from "next/link";
-import { HiArrowNarrowRight } from "react-icons/hi";
-import { motion } from "framer-motion";
-import { fadeUpAnimation, techBadgeAnimation } from "@/src/lib/animations";
-import { Project } from "@/src/@types/projects";
-import { TechBadge } from "@/src/components/tech-badge";
-import { CustomLink } from "@/src/components/custom-link";
+import Image from 'next/image'
+import NextLink from 'next/link'
+import { HiArrowNarrowRight } from 'react-icons/hi'
+import { motion } from 'framer-motion'
+import { fadeUpAnimation, techBadgeAnimation } from '@/src/lib/animations'
+import { Project } from '@/src/@types/projects'
+import { TechBadge } from '@/src/components/tech-badge'
+import { CustomLink } from '@/src/components/custom-link'
 
 type ProjectCardProps = {
-  project: Project;
-};
+  project: Project
+}
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
@@ -49,7 +49,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           <Image
             width={20}
             height={20}
-            src={"/images/icons/project-title-icon.svg"}
+            src={'/images/icons/project-title-icon.svg'}
             alt=""
           />
           <NextLink href={`/projects/${project.slug}`}>
@@ -81,5 +81,5 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         </CustomLink>
       </div>
     </motion.div>
-  );
-};
+  )
+}

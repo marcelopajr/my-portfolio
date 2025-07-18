@@ -1,25 +1,25 @@
-import { Metadata } from 'next';
-import { ReactNode } from 'react';
-import { Inter, IBM_Plex_Mono } from 'next/font/google';
-import './globals.css';
-import { Header } from '../components/header';
-import { Toaster } from '../components/toaster';
-import { ContactForm } from '../components/contact-form';
-import { BackToTop } from '../components/back-to-top';
-import { Footer } from '../components/footer';
+import { Metadata } from 'next'
+import { ReactNode } from 'react'
+import { Inter, IBM_Plex_Mono } from 'next/font/google'
+import './globals.css'
+import { Header } from '../components/header'
+import { Toaster } from '../components/toaster'
+import { ContactForm } from '../components/contact-form'
+import { BackToTop } from '../components/back-to-top'
+import { Footer } from '../components/footer'
 
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
   display: 'swap',
-});
+})
 
 const plexMono = IBM_Plex_Mono({
   variable: '--font-plex-mono',
   subsets: ['latin'],
   weight: ['400', '500'],
   display: 'swap',
-});
+})
 
 export const metadata: Metadata = {
   applicationName: 'Marcelo Pereira',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
       'Welcome to my portfolio! Here you can explore my selected projects, which showcase my skills in front-end development and my dedication to delivering high-quality web applications.',
     card: 'summary',
   },
-};
+}
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -72,5 +72,5 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Footer />
       </body>
     </html>
-  );
+  )
 }

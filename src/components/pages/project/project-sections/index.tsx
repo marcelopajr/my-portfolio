@@ -1,24 +1,24 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import { fadeUpAnimation } from "@/src/lib/animations";
-import { ProjectSection } from "@/src/@types/projects";
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import { fadeUpAnimation } from '@/src/lib/animations'
+import { ProjectSection } from '@/src/@types/projects'
 
 type ProjectSectionsProps = {
-  sections: ProjectSection[];
-  description: string;
-};
+  sections: ProjectSection[]
+  description: string
+}
 
 export const ProjectSections = ({
   sections,
   description,
 }: ProjectSectionsProps) => {
   const cleanedMarkdown = description
-    .replace(/\\n+$/, "") // remove literal \n
-    .replace(/(\r\n|\r|\n)+$/, ""); // remove real newlines if present
+    .replace(/\\n+$/, '') // remove literal \n
+    .replace(/(\r\n|\r|\n)+$/, '') // remove real newlines if present
 
   return (
     <section className="container my-12 md:my-24 flex flex-col gap-8 md:gap-20">
@@ -44,7 +44,7 @@ export const ProjectSections = ({
       ))}
 
       <motion.div
-        key={"description"}
+        key={'description'}
         {...fadeUpAnimation}
         transition={{ duration: 0.5 }}
         className="prose prose-invert max-w-none text-gray-300"
@@ -67,5 +67,5 @@ export const ProjectSections = ({
         </ReactMarkdown>
       </motion.div>
     </section>
-  );
-};
+  )
+}

@@ -1,23 +1,23 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { AiOutlineHome, AiOutlineFundProjectionScreen } from "react-icons/ai";
-import { NavItem } from "./nav-item";
+import Image from 'next/image'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { AiOutlineHome, AiOutlineFundProjectionScreen } from 'react-icons/ai'
+import { NavItem } from './nav-item'
 
 const NAV_ITEMS = [
   {
-    label: "Home",
-    href: "/",
+    label: 'Home',
+    href: '/',
     icon: <AiOutlineHome size={20} />,
   },
   {
-    label: "Projects",
-    href: "/projects",
+    label: 'Projects',
+    href: '/projects',
     icon: <AiOutlineFundProjectionScreen size={20} />,
   },
-];
+]
 
 export const Header = () => {
   return (
@@ -28,11 +28,11 @@ export const Header = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="container flex items-center justify-between">
-        <Link href={"/"}>
+        <Link href={'/'}>
           <Image
             width={58}
             height={49}
-            src={"/images/logo.svg"}
+            src={'/images/logo.svg'}
             alt="Logo MA dev"
           />
         </Link>
@@ -44,5 +44,5 @@ export const Header = () => {
         </nav>
       </div>
     </motion.header>
-  );
-};
+  )
+}

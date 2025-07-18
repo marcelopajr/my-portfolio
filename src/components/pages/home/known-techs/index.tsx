@@ -1,13 +1,13 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import { KnownTech as IKnownTech } from "@/src/@types/projects";
-import { SectionTitle } from "@/src/components/section-title";
-import { KnownTech } from "./known-tech";
+import { motion } from 'framer-motion'
+import { KnownTech as IKnownTech } from '@/src/@types/projects'
+import { SectionTitle } from '@/src/components/section-title'
+import { KnownTech } from './known-tech'
 
 type KnownTechsProps = {
-  techs: IKnownTech[];
-};
+  techs: IKnownTech[]
+}
 
 export const KnownTechs = ({ techs }: KnownTechsProps) => {
   return (
@@ -28,5 +28,5 @@ export const KnownTechs = ({ techs }: KnownTechsProps) => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}

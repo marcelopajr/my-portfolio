@@ -1,23 +1,23 @@
-"use client";
+'use client'
 
-import { useForm } from "react-hook-form";
-import axios from "axios";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import toast from "react-hot-toast";
-import { HiArrowNarrowRight } from "react-icons/hi";
-import { motion } from "framer-motion";
-import { fadeUpAnimation } from "@/src/lib/animations";
-import { SectionTitle } from "../section-title";
-import { Button } from "../button";
+import { useForm } from 'react-hook-form'
+import axios from 'axios'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import toast from 'react-hot-toast'
+import { HiArrowNarrowRight } from 'react-icons/hi'
+import { motion } from 'framer-motion'
+import { fadeUpAnimation } from '@/src/lib/animations'
+import { SectionTitle } from '../section-title'
+import { Button } from '../button'
 
 const contactFormSchema = z.object({
   name: z.string().min(3).max(100),
   email: z.string().email(),
   message: z.string().min(1).max(500),
-});
+})
 
-type ContactFormData = z.infer<typeof contactFormSchema>;
+type ContactFormData = z.infer<typeof contactFormSchema>
 
 export const ContactForm = () => {
   const {
@@ -27,17 +27,17 @@ export const ContactForm = () => {
     formState: { isSubmitting },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
-  });
+  })
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      await axios.post("/api/contact", data);
-      toast.success("Message sent successfully!");
-      reset();
+      await axios.post('/api/contact', data)
+      toast.success('Message sent successfully!')
+      reset()
     } catch {
-      toast.error("An error occurred in form submission. Try again!");
+      toast.error('An error occurred in form submission. Try again!')
     }
-  };
+  }
 
   return (
     <section
@@ -59,19 +59,19 @@ export const ContactForm = () => {
           <input
             placeholder="Name"
             className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-500 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-            {...register("name")}
+            {...register('name')}
           />
           <input
             placeholder="E-mail"
             type="email"
             className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-500 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-            {...register("email")}
+            {...register('email')}
           />
           <textarea
             placeholder="Message"
             maxLength={500}
             className="resize-none w-full h-[138px] bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-500 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-            {...register("message")}
+            {...register('message')}
           />
 
           <Button
@@ -83,5 +83,5 @@ export const ContactForm = () => {
         </motion.form>
       </div>
     </section>
-  );
-};
+  )
+}

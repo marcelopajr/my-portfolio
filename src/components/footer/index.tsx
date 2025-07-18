@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { IoMdHeart } from 'react-icons/io';
+import Link from 'next/link'
+import { IoMdHeart } from 'react-icons/io'
 
 export const Footer = () => {
   return (
@@ -14,5 +14,5 @@ export const Footer = () => {
         </Link>
       </span>
     </footer>
-  );
-};
+  )
+}

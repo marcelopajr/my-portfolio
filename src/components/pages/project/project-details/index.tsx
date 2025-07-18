@@ -1,20 +1,20 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import { TbBrandGithub } from "react-icons/tb";
-import { FiGlobe } from "react-icons/fi";
-import { HiArrowNarrowLeft } from "react-icons/hi";
-import { motion } from "framer-motion";
-import { techBadgeAnimation } from "@/src/lib/animations";
-import { Project } from "@/src/@types/projects";
-import { SectionTitle } from "@/src/components/section-title";
-import { TechBadge } from "@/src/components/tech-badge";
-import { Button } from "@/src/components/button";
-import { CustomLink } from "@/src/components/custom-link";
+import Link from 'next/link'
+import { TbBrandGithub } from 'react-icons/tb'
+import { FiGlobe } from 'react-icons/fi'
+import { HiArrowNarrowLeft } from 'react-icons/hi'
+import { motion } from 'framer-motion'
+import { techBadgeAnimation } from '@/src/lib/animations'
+import { Project } from '@/src/@types/projects'
+import { SectionTitle } from '@/src/components/section-title'
+import { TechBadge } from '@/src/components/tech-badge'
+import { Button } from '@/src/components/button'
+import { CustomLink } from '@/src/components/custom-link'
 
 type ProjectDetailsProps = {
-  project: Project;
-};
+  project: Project
+}
 export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
   return (
     <section className="w-full sm:min-h-[750px] flex flex-col items-center justify-end relative pb-10 sm:pb-24 py-24 px-6 overflow-hidden">
@@ -81,9 +81,9 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         )}
       </motion.div>
 
-      <CustomLink href={"/projects"} className="flex items-center gap-1.5">
+      <CustomLink href={'/projects'} className="flex items-center gap-1.5">
         <HiArrowNarrowLeft size={20} /> Back to Projects
       </CustomLink>
     </section>
-  );
-};
+  )
+}

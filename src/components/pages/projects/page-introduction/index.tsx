@@ -1,9 +1,9 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import { HiArrowNarrowLeft } from "react-icons/hi";
-import { CustomLink } from "@/src/components/custom-link";
-import { SectionTitle } from "@/src/components/section-title";
+import { motion } from 'framer-motion'
+import { HiArrowNarrowLeft } from 'react-icons/hi'
+import { CustomLink } from '@/src/components/custom-link'
+import { SectionTitle } from '@/src/components/section-title'
 
 export const PageIntroduction = () => {
   return (
@@ -26,11 +26,11 @@ export const PageIntroduction = () => {
           technologies used and the features implemented.
         </p>
 
-        <CustomLink href={"/"}>
+        <CustomLink href={'/'}>
           <HiArrowNarrowLeft size={20} />
           Back to Home
         </CustomLink>
       </motion.div>
     </section>
-  );
-};
+  )
+}

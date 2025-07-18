@@ -1,17 +1,17 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { differenceInMonths, differenceInYears, format } from "date-fns";
-import enUS from "date-fns/locale/en-US";
-import { motion } from "framer-motion";
-import { fadeUpAnimation, techBadgeAnimation } from "@/src/lib/animations";
-import { WorkExperience } from "@/src/@types/work-experience";
-import { RichText } from "@/src/components/rich-text";
-import { TechBadge } from "@/src/components/tech-badge";
+import Image from 'next/image'
+import { differenceInMonths, differenceInYears, format } from 'date-fns'
+import enUS from 'date-fns/locale/en-US'
+import { motion } from 'framer-motion'
+import { fadeUpAnimation, techBadgeAnimation } from '@/src/lib/animations'
+import { WorkExperience } from '@/src/@types/work-experience'
+import { RichText } from '@/src/components/rich-text'
+import { TechBadge } from '@/src/components/tech-badge'
 
 type ExperienceItemProps = {
-  experience: WorkExperience;
-};
+  experience: WorkExperience
+}
 
 export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
   const {
@@ -23,28 +23,28 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
     description,
     role,
     technologies,
-  } = experience;
+  } = experience
 
   const formattedStartDate =
     startDate &&
-    format(new Date(experience.startDate), "MMM yyyy", { locale: enUS });
+    format(new Date(experience.startDate), 'MMM yyyy', { locale: enUS })
   const formattedEndDate = endDate
-    ? format(new Date(endDate), "MMM yyyy", { locale: enUS })
-    : "Present";
+    ? format(new Date(endDate), 'MMM yyyy', { locale: enUS })
+    : 'Present'
 
-  const end = endDate ? new Date(endDate) : new Date();
-  const months = differenceInMonths(end, new Date(startDate));
-  const years = differenceInYears(end, new Date(startDate));
-  const monthsRemaining = months % 12;
+  const end = endDate ? new Date(endDate) : new Date()
+  const months = differenceInMonths(end, new Date(startDate))
+  const years = differenceInYears(end, new Date(startDate))
+  const monthsRemaining = months % 12
 
   const formattedDuration =
     years > 0
-      ? `${years} year${years > 1 ? "s" : ""}${
+      ? `${years} year${years > 1 ? 's' : ''}${
           monthsRemaining > 0
-            ? ` and ${monthsRemaining} month${monthsRemaining > 1 ? "s" : ""}`
-            : ""
+            ? ` and ${monthsRemaining} month${monthsRemaining > 1 ? 's' : ''}`
+            : ''
         }`
-      : `${months} month${months > 1 ? "s" : ""}`;
+      : `${months} month${months > 1 ? 's' : ''}`
 
   return (
     <motion.div
@@ -72,6 +72,7 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
             href={companyUrl}
             target="_blank"
             className="text-gray-500 hover:text-emerald-500 transition-colors"
+            rel="noreferrer"
           >
             @ {companyName}
           </a>
@@ -99,5 +100,5 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
         </div>
       </div>
     </motion.div>
-  );
-};
+  )
+}
